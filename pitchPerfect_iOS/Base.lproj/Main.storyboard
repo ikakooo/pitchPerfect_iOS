@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QLx-Lv-HLZ">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Record Sounds View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="pitchPerfect_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRY-mf-WlK">
+                                <rect key="frame" x="136.66666666666666" y="385.66666666666669" width="154.99999999999997" height="155.00000000000006"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="recordButton"/>
+                                <connections>
+                                    <action selector="recorderTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zmf-kP-3oq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62A-xB-8eQ">
+                                <rect key="frame" x="159.66666666666666" y="548.66666666666663" width="108.99999999999997" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sro-kL-DUi">
+                                <rect key="frame" x="182" y="577.66666666666663" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Aix-VQ-Hiq"/>
+                                    <constraint firstAttribute="height" constant="64" id="VQs-o8-xum"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Stop">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopperTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aIC-6Z-Mht"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="62A-xB-8eQ" firstAttribute="top" secondItem="xRY-mf-WlK" secondAttribute="bottom" constant="8" id="8fU-rC-Mka"/>
+                            <constraint firstItem="62A-xB-8eQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zr3-DL-tfN"/>
+                            <constraint firstItem="62A-xB-8eQ" firstAttribute="top" secondItem="xRY-mf-WlK" secondAttribute="bottom" constant="8" id="kGQ-V7-jOl"/>
+                            <constraint firstItem="xRY-mf-WlK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lcQ-j3-BV3"/>
+                            <constraint firstItem="xRY-mf-WlK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="opA-6K-v83"/>
+                            <constraint firstItem="Sro-kL-DUi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xaa-gp-oBj"/>
+                            <constraint firstItem="Sro-kL-DUi" firstAttribute="top" secondItem="62A-xB-8eQ" secondAttribute="bottom" constant="8" id="yuI-8r-dvX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OMq-sI-2ZV"/>
+                    <connections>
+                        <outlet property="recordButton" destination="xRY-mf-WlK" id="1eS-eR-Ooz"/>
+                        <outlet property="recordingStateLabel" destination="62A-xB-8eQ" id="CM8-8K-6EF"/>
+                        <outlet property="stopRecordingButton" destination="Sro-kL-DUi" id="qM1-sR-5ZY"/>
+                        <segue destination="PsT-yG-qaL" kind="show" identifier="stopperTapped" id="cd5-YX-WUb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918.2242990654205" y="64.146868250539967"/>
+        </scene>
+        <!--Play Sounds View Controller-->
+        <scene sceneID="IvK-3J-q3f">
+            <objects>
+                <viewController id="PsT-yG-qaL" customClass="playSoundsViewController" customModule="pitchPerfect_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lRD-AO-5VU">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="muH-YK-W7X">
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mon-Pf-lTc">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="104"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJT-fb-aIT" userLabel="Slow Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="104"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Slow"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpg-G8-JNX" userLabel="Fast Button">
+                                                <rect key="frame" x="214" y="0.0" width="214" height="104"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button" image="Fast"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Fast"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-OK-c2L">
+                                        <rect key="frame" x="0.0" y="246.66666666666669" width="428" height="104"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gG-dP-c33" userLabel="High Pitch Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="104"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="HighPitch"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXl-sb-Kso" userLabel="Low Pitch Button">
+                                                <rect key="frame" x="214" y="0.0" width="214" height="104"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="LowPitch"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yPP-Ss-ipP">
+                                        <rect key="frame" x="0.0" y="493.33333333333337" width="428" height="104"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3F-UT-rji" userLabel="Echo Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="104"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Echo"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPy-LC-POv" userLabel="Reverb Button">
+                                                <rect key="frame" x="214" y="0.0" width="214" height="104"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Reverb"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KTt-cc-G44">
+                                        <rect key="frame" x="0.0" y="740" width="428" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgQ-ox-kAl" userLabel="Stop Button">
+                                                <rect key="frame" x="182" y="0.0" width="64" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="Fry-It-obH"/>
+                                                    <constraint firstAttribute="width" constant="64" id="jhd-jX-tTd"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="Stop"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fE5-Ti-RNw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fE5-Ti-RNw" firstAttribute="bottom" secondItem="muH-YK-W7X" secondAttribute="bottom" id="Dc6-63-Ric"/>
+                            <constraint firstItem="muH-YK-W7X" firstAttribute="top" secondItem="fE5-Ti-RNw" secondAttribute="top" id="JLs-qw-l07"/>
+                            <constraint firstItem="fE5-Ti-RNw" firstAttribute="trailing" secondItem="muH-YK-W7X" secondAttribute="trailing" id="hZ7-CL-bVW"/>
+                            <constraint firstItem="muH-YK-W7X" firstAttribute="leading" secondItem="fE5-Ti-RNw" secondAttribute="leading" id="uhX-nS-YG7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hPI-80-iR0"/>
+                    <connections>
+                        <outlet property="chipmunkButton" destination="6gG-dP-c33" id="VLO-ek-Epe"/>
+                        <outlet property="echoButton" destination="v3F-UT-rji" id="hyh-Bg-Has"/>
+                        <outlet property="rabbitButton" destination="Wpg-G8-JNX" id="1vx-Gm-KGI"/>
+                        <outlet property="reverbButton" destination="KPy-LC-POv" id="tXN-nh-wVM"/>
+                        <outlet property="snailButton" destination="JJT-fb-aIT" id="GeR-Px-TR4"/>
+                        <outlet property="stopButton" destination="LgQ-ox-kAl" id="DJN-h1-y56"/>
+                        <outlet property="vaderButton" destination="AXl-sb-Kso" id="WHk-5I-di4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Hh-0y-Ktt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757.9439252336447" y="63.498920086393092"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3mB-Gy-S6J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QLx-Lv-HLZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ro5-Tv-v1p">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yci-LC-tNg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwk-8a-vy5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.22429906542056" y="64.146868250539967"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Echo" width="90" height="90"/>
+        <image name="Fast" width="90" height="90"/>
+        <image name="HighPitch" width="90" height="90"/>
+        <image name="LowPitch" width="90" height="90"/>
+        <image name="Reverb" width="90" height="90"/>
+        <image name="Slow" width="90" height="90"/>
+        <image name="Stop" width="155" height="155"/>
+        <image name="recordButton" width="155" height="155"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
